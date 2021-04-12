@@ -49,7 +49,7 @@ function multiplication(a, b) {
     return a * b
 
 }
-
+/*
 console.log(addition(1,5))
 console.log(addition(1,-5))
 
@@ -63,4 +63,4 @@ console.log(division(0,10))
 
 console.log(multiplication(2,10))
 console.log(multiplication(0,10))
-console.log(multiplication(0,-2))
+console.log(multiplication(0,-2))*/
