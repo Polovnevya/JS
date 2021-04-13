@@ -6,6 +6,13 @@
 (использовать функции из задания 4) и вернуть полученное значение.
 */
 
+/**
+ * функция производит арифметические действия над числами
+ * @param arg1 первое число
+ * @param arg2 второе число
+ * @param operation тип действия в виде строки "+" "-" "/" "*"
+ * @returns {Number}
+ */
 function mathOperation(arg1, arg2, operation){
     switch (operation) {
         case "+":
