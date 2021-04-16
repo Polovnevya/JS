@@ -20,7 +20,9 @@ const products = [
     },
 ];
 
-products.forEach(function () {
-    products.pr
-
+products.forEach(function (products) {
+    let sale = 0.85
+    console.log(`Старая цена ${products.price}`)
+    products.price = products.price * sale
+    console.log(`Новая цена ${products.price}`)
 })
