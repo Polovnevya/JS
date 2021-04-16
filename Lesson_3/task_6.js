@@ -6,9 +6,13 @@ x
 xxxxx
 xxxx
 xxxx
-
 * */
+let i, j
 
-for (i = 1; i < 20; i++) {
-    console.log("*")
+for (i = 0; i < 20; i++) {
+    let star = ""
+    for (j = 0; j <= i; j++) {
+        star = star + "*"
+    }
+    console.log(star)
 }
