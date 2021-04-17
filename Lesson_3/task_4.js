@@ -34,15 +34,26 @@ const products = [
     },
 ];
 
-let filtred_products = []
-filtred_products = products.filter(function (isHavePhoto) {
-    console.log(isHavePhoto.photos)
-    return isHavePhoto.photos.length > 0
-})
+let filtred_products
+filtred_products = products.filter(isHavePhoto)
 
-function isHavePhoto(){
+function isHavePhoto(products) {
+    return  "photos" in products && products.photos.length > 0
+}
 
+let sorted_products
+sorted_products = products.sort(priceCompare)
+
+function priceCompare(a,b){
+    if (a.price < b.price){
+        return -1
+    }
+    if (a.price > b.price){
+        return 1
+    }
+    return 0
 }
 
 
 console.log(filtred_products)
+console.log(sorted_products)
