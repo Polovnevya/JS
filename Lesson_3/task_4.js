@@ -33,3 +33,16 @@ const products = [
         id: 8, price: 78,
     },
 ];
+
+let filtred_products = []
+filtred_products = products.filter(function (isHavePhoto) {
+    console.log(isHavePhoto.photos)
+    return isHavePhoto.photos.length > 0
+})
+
+function isHavePhoto(){
+
+}
+
+
+console.log(filtred_products)
