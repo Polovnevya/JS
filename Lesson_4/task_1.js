@@ -19,16 +19,14 @@ function createObjectNumber(number) {
     }
 
     objectNumber.prototype.convert = function () {
-        /**
-         * блок проверок
-         */
-
-        if (number == NaN || number == undefined || number == null || number == "") {
+        if (isNaN(number) || number == undefined || number == null || number == "" || !Number.isInteger(Number(number))) {
             return NaN
-        } else if (number >= 0 && number <= 999 && Number.isInteger(Number(number))) {
+        } else if (number >= 0 && number <= 999) {
             this.units = number % 10
             this.tens = Math.floor(number / 10) % 10
             this.hundereds = Math.floor(number / 100) % 10
+        } else {
+            return "Out of range 0 - 999"
         }
     }
     let myObj = new objectNumber
@@ -36,8 +34,6 @@ function createObjectNumber(number) {
     return myObj
 }
 
-
 let number = prompt("Введите число от 0 до 999")
-
 let my_obj = createObjectNumber(number)
 console.log(my_obj.hundereds, my_obj.tens, my_obj.units)
