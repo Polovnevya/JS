@@ -1,24 +1,49 @@
 'use strict'
+
 /*
-* С помощью цикла for написать алгоритм для вывода чисел (выводите в консоль, с помощью console.log) от 0 до 10
-включительно, чтобы результат выглядел так:
-0 – это ноль
-1 – нечетное число
-2 – четное число
-3 – нечетное число
-…
-10 – четное число
+(это задание делайте по желанию) Написать функцию, преобразующую число в объект. Передавая на
+вход число в диапазоне [0, 999],
+мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+- единицы (в свойстве units)
+- десятки (в свойстве tens)
+- сотни (в свойстве hundereds)
 
 * */
 
-let i
-for (i = 0; i <= 10; i++) {
-    if (i === 0) {
-        console.log("0 – это ноль")
-    } else if ((i % 2) === 0) {
-        console.log(`${i} - это четное число`)
-    } else {
-        console.log(`${i} - это нечетное число`)
+function createObjectNumber(number) {
+
+    function objectNumber() {
+        this.units
+        this.tens
+        this.hundereds
     }
 
+    objectNumber.prototype.convert()
+    {
+        /**
+         * блок проверок
+         */
+        switch (number) {
+            case NaN || undefined  : {
+                return NaN
+            }
+            case  !Number.isInteger(number): {
+                return NaN
+            }
+            case number < 0 && number > 999: {
+                return "Out of range"
+            }
+        }
+
+        this.units = number % 10
+        this.tens = number % 100
+        this.hundereds = number % 1000
+    }
+
+    return objectNumber.prototype.convert(number)
 }
+
+
+let number = prompt("Введите число от 0 до 999")
+
+let my_obj = createObjectNumber(number)
