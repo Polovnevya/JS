@@ -1,49 +1,8 @@
 'use strict'
 
 /*
-Сделайте в стиле es5, а затем в стиле es6 (по аналогии из дополнительных видео -> 3 примеры
-наследования -> механика наследования),
-
-а) конструктор Post, который принимает параметры author, text, date и сохраняет их как свойства объекта.
- Объекты типа Post должны иметь метод edit, который будет принимать текст и записывать его в свойство text объекта.
-
-б) конструктор AttachedPost, который принимает параметры author, text, date.
- Проинициализируйте эти свойства с помощью конструктора Post, чтобы не дублировать код.
- Также в конструкторе AttachedPost должно создаваться свойство highlighted со значением false.
- Унаследуйте в объектах типа AttachedPost методы из Post.
-Объекты типа AttachedPost должны иметь метод makeTextHighlighted, который будет назначать свойству
-highlighted значение true.
+(это задание не является частью учебной программы, делайте его по желанию). Для игры бродилка (которая
+есть в дополнительных видео), добавить возможность ходить по диагонали цифрами 1, 3, 7, 9.
+Также необходимо сделать так, чтобы пользователь не мог совершить шаг в стенку, т.е. при направлении в стенку
+и игрок оставался на том же месте где стоял.
 * */
-
-/*********************************************************************************************************/
-function Post(author, text, date) {
-    this.author = author
-    this.text = text
-    this.date = date
-}
-
-Post.prototype.edit = function (text) {
-    this.text = text
-}
-
-/*********************************************************************************************************/
-function AttachedPost(author, text, date) {
-    Post.call(this, author, text, date)
-    this.highlighted = false
-}
-
-AttachedPost.prototype = Object.create(Post.prototype)
-AttachedPost.constructor = AttachedPost
-AttachedPost.prototype.makeTextHighlighted = function () {
-    this.highlighted = true
-}
-
-let myPost = new AttachedPost("qqq", "wqesdfsdfdrew3241213", "01.01.2020")
-console.log(myPost)
-console.log(myPost.highlighted)
-myPost.makeTextHighlighted()
-console.log(myPost.highlighted)
-console.log(myPost.text)
-myPost.edit("22222")
-console.log(myPost.text)
-console.log(myPost)
