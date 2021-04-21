@@ -33,7 +33,7 @@ function AttachedPost(author, text, date) {
 }
 
 AttachedPost.prototype = Object.create(Post.prototype)
-AttachedPost.constructor = AttachedPost
+AttachedPost.prototype.constructor = AttachedPost
 AttachedPost.prototype.makeTextHighlighted = function () {
     this.highlighted = true
 }
@@ -50,36 +50,36 @@ console.log(myPost.text)
 
 //new style
 /*********************************************************************************************************/
-
-class Post {
-    constructor(author, text, date) {
-        this.author = author
-        this.text = text
-        this.date = date
-    }
-
-    edit(text) {
-        this.text = text
-    }
-}
-
-class AttachedPost extends Post {
-    constructor(author, text, date) {
-        super(author, text, date)
-        this.highlighted = false
-    }
-
-    makeTextHighlighted() {
-        this.highlighted = true
-    }
-}
-
-let myPost = new AttachedPost("qqq", "wqesdfsdfdrew3241213", "01.01.2020")
-console.log(myPost)
-console.log(myPost.highlighted)
-myPost.makeTextHighlighted()
-console.log(myPost.highlighted)
-console.log(myPost.text)
-myPost.edit("22222")
-console.log(myPost.text)
+//
+// class Post {
+//     constructor(author, text, date) {
+//         this.author = author
+//         this.text = text
+//         this.date = date
+//     }
+//
+//     edit(text) {
+//         this.text = text
+//     }
+// }
+//
+// class AttachedPost extends Post {
+//     constructor(author, text, date) {
+//         super(author, text, date)
+//         this.highlighted = false
+//     }
+//
+//     makeTextHighlighted() {
+//         this.highlighted = true
+//     }
+// }
+//
+// let myPost = new AttachedPost("qqq", "wqesdfsdfdrew3241213", "01.01.2020")
+// console.log(myPost)
+// console.log(myPost.highlighted)
+// myPost.makeTextHighlighted()
+// console.log(myPost.highlighted)
+// console.log(myPost.text)
+// myPost.edit("22222")
+// console.log(myPost.text)
 /*********************************************************************************************************/
