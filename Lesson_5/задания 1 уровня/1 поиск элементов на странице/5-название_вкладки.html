@@ -9,7 +9,12 @@
     <!-- Задание. Выведите содержимое тега title в консоль. -->
 
     <script>
-        
+        'use strict'
+        let el = document.getElementsByTagName('title')
+        let el2 = document.querySelector("title")
+        console.log(el[0].innerText)
+        console.log(el2.innerHTML)
+
     </script>
 </body>
 </html>
