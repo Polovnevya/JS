@@ -13,5 +13,11 @@
     <a href="#">link</a>
     используя метод insertAdjacentHTML.
     -->
+    <script>
+        'use strict'
+        let el = document.querySelector("div")
+        let markup = '<a href="#">link</a>'
+        el.insertAdjacentHTML("afterbegin", markup)
+    </script>
 </body>
 </html>
