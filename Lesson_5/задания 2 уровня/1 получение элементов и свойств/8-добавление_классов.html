@@ -19,6 +19,12 @@
     -->
 
     <script>
+        let bArray = document.querySelectorAll("b")
+        bArray.forEach(function (value, key) {
+            if(!value.classList.contains('sign')){
+                bArray[key].classList.add('sign')
+            }
+        })
         
     </script>
 </body>
