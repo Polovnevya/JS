@@ -19,6 +19,14 @@
     -->
 
     <script>
+        'use strict'
+        let mySpan = document.querySelector("span")
+        let FormEl = document.querySelector("#from")
+        FormEl.addEventListener('change', function (event) {
+            let inputText = event.target.value
+            mySpan.innerText = inputText
+        })
+
         
     </script>
 </body>
