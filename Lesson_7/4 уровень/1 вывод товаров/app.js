@@ -1,4 +1,12 @@
 "use strict";
+let myProducts = document.querySelector('.products')
+let myButtons = document.querySelectorAll("button")
+
+myButtons.forEach(function (el) {
+    el.addEventListener('click', clickHandler)
+})
+
+
 /* 
 Разметка товара:
 
@@ -82,10 +90,12 @@ const products = {
  */
 function clickHandler(event) {
     //вам нужно очищать содержимое .products
-    
+
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
-    
+    myProducts.innerHTML = ""
+    let myDataset = event.target.dataset
+    showCategory(myDataset["type"])
 }
 
 /**
@@ -96,7 +106,10 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    let myCategory = products[category]
+    for (let i = 0; i <= myCategory.length; i++) {
+        myProducts.insertAdjacentHTML("afterbegin", getProductMarkup(myCategory[i]))
+    }
 }
 
 /**
@@ -109,5 +122,11 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
-
+    let Markup = `<div class="product">
+    <div>${product.name}</div>
+    <img src="${product.imageUrl}" alt="">
+    <div>${product.price}</div>
+    <a href="https://example.com/producs/${product.id}">Подробнее</a>
+    </div>`
+    return Markup
 }
