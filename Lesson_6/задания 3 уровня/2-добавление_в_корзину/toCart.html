@@ -45,13 +45,13 @@ buttonClickHandler (увидите ее ниже в коде)
 
     function buttonClickHandler(event) {
         let btnParent = event.target.parentNode
-        // btnParent.style.background = lightgreen
+        btnParent.style.background = "lightgreen"
         event.target.innerText = "Добавлено"
     }
 
     let myButtons = document.querySelectorAll("button")
     myButtons.forEach(function (button) {
-        button.addEventListener("click", buttonClickHandler.bind(event))
+        button.addEventListener("click", buttonClickHandler)
     })
 
 
